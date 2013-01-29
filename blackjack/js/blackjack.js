@@ -44,7 +44,7 @@ var deck = new Deck();
 function newGame() {
 
   // reset game
-  $("newGameBtn").popover('destroy');
+  $("#newGameBtn").popover('destroy');
   $("#dealerScore").html("");
   $('.card').remove();
 
