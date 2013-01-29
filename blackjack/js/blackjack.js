@@ -72,9 +72,8 @@ function newGame() {
 function hit() {
   var total = 0;
   var new_card = 0;
-  if ( game_over ) {
-    $("#newGameBtn").popover({ title: 'Game ended!', content: 'Go again?' });
-    $("#newGameBtn").popover('show');
+  if (game_over) {
+    showPopup("Game Ended!");
   } else {
     new_card = player_hand.length;
     player_hand[new_card] = deck.dealCard();
@@ -96,8 +95,7 @@ function stand() {
   var total = 0;
   var new_card = 0;
   if (game_over) {
-    $("#newGameBtn").popover({ title: 'Game ended!', content: 'Go again?' });
-    $("#newGameBtn").popover('show');
+    showPopup("Game Ended!");
   } else {
       document.images[0].src = dealer_hand[0].image();
       while (score(dealer_hand) < 17 ) {
@@ -147,32 +145,22 @@ function winner() {
   var player_total = score(player_hand);
   var dealer_total = score(dealer_hand);
   if (player_total > 21) {
-    $("#newGameBtn").popover('destroy');
-    $("#newGameBtn").popover({ title: 'Dealer Wins!', content: 'Go again?' });
-    $("#newGameBtn").popover('show');
+    showPopup("Dealer Wins!");
   } else {
-      if (dealer_total > 21) {
-        $("#newGameBtn").popover('destroy');
-        $("#newGameBtn").popover({ title: 'Player Wins!', content: 'Go again?' });
-        $("#newGameBtn").popover('show');
-      } else {
-       if (player_total == dealer_total) {
-        $("#newGameBtn").popover('destroy');
-        $("#newGameBtn").popover({ title: 'Tie Game!', content: 'Go again?' });
-        $("#newGameBtn").popover('show');
+    if (dealer_total > 21) {
+      showPopup("Player Wins!");
+    } else {
+      if (player_total == dealer_total) {
+        showPopup("Tie Game!");
       } else {
         if (player_total > dealer_total) {
-          $("#newGameBtn").popover('destroy');
-          $("#newGameBtn").popover({ title: 'Player Wins!', content: 'Go again?' });
-          $("#newGameBtn").popover('show');
+          showPopup("Player Wins!");
        } else {
-           $("#newGameBtn").popover('destroy');
-           $("#newGameBtn").popover({ title: 'Dealer Wins!', content: 'Go again?' });
-           $("#newGameBtn").popover('show');
+           showPopup("Dealer Wins!");
+         }
        }
      }
    }
- }
 }
 
 function showDealerImage(image) {
@@ -181,6 +169,12 @@ function showDealerImage(image) {
 
 function showPlayerImage(image) {
   $("#playerDiv").append("<img src=" + image + " class='card'></img>");
+}
+
+function showPopup(title) {
+  $("#newGameBtn").popover('destroy');
+  $("#newGameBtn").popover({ title: title, content: 'Go again?' });
+  $("#newGameBtn").popover('show');
 }
 
 $("#newGameBtn").click(function() {
