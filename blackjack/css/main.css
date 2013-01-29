@@ -1,0 +1,24 @@
+img {
+	padding: 0 5px 5px 5px;
+}
+
+.well {
+	font-family: "Open Sans", sans-serif;
+	color: #AAAAAA;
+	font-weight: 300;
+}
+
+#playerScore, #dealerScore {
+	float: right;
+}
+
+
+
+
+
+
+
+
+
+
+

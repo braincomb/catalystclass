@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+        <link rel="stylesheet" href="css/main.css">
+
+        <!--[if lt IE 9]>
+            <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+            <script>window.html5 || document.write('<script src="js/vendor/html5shiv.js"><\/script>')</script>
+        <![endif]-->
+    </head>
+    <body style="padding-top: 60px; padding-bottom: 40px;">
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand" href="#">Blackjack</a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav">
+                            <li><a href="http://github.com/braincomb/catalystclass/blackjack">View Source</a></li>
+                        </ul>
+                    </div><!--/.nav-collapse -->
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+
+            <div class="row">
+              <div class="span9" id="dealerDiv">
+              <div class="well well-small"><p style="float: left;">Dealer</p><span id="dealerScore"></span></div>
+              </div>
+            </div>
+            
+            <div class="row" style="margin-top: 15px;">
+              <div class="span9" id="playerDiv">
+              <div class="well well-small"><p style="float: left;">Player</p><span id="playerScore"></span></div>
+              </div>
+            </div> 
+
+            <!-- buttons -->
+            <div class="row" style="margin-top: 20px;">
+            <div class="span3">
+            <a class="btn btn-success" id="newGameBtn" rel="popover" data-placement="bottom" href="#">New Game</a>
+            <a class="btn" id="hitBtn" href="#">Hit</a>
+            <a class="btn" id="standBtn" href="#">Stand</a>
+            </div>
+            </div>
+
+            <hr>
+
+            <footer>
+                <p>Blackjack implementation in JavaScript by Aleksandr Melentiev for <a href="http://catalystclass.com">Catalyst Class</a>.</p>
+            </footer>
+
+        </div> <!-- /container -->
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.0.min.js"><\/script>')</script>
+
+        <script src="js/vendor/bootstrap.min.js"></script>
+
+        <script src="js/blackjack.js"></script>
+    </body>
+</html>
