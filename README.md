@@ -1,4 +1,4 @@
 catalystclass
 =============
 
-Material, projects and assignments for Catalyst Class.
+Material, projects and assignments for Hack Reactor (formerly Catalyst).
